@@ -1,0 +1,36 @@
+{
+  "name": "patternfly-react",
+  "version": "0.0.1",
+  "description": "Lightweight react components for patternfly",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idimaster/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly",
+    "bootstrap"
+  ],
+  "author": "Dmitry Izumskiy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/idimaster/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/idimaster/patternfly-react#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-typescript": "^2.13.6",
+    "typescript": "^1.8.10"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "patternfly": "^3.8.1",
+    "react": "^15.3.0"
+  }
+}
