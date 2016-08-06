@@ -23,6 +23,9 @@
   "homepage": "https://github.com/idimaster/patternfly-react#readme",
   "devDependencies": {
     "babel": "^6.5.2",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-typescript": "^2.13.6",
@@ -33,5 +36,19 @@
     "bootstrap": "^3.3.7",
     "patternfly": "^3.8.1",
     "react": "^15.3.0"
+  },
+  "engines": {
+    "node": ">= 4.4.0",
+    "npm": ">= 2.15.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0",
+      "react"
+    ]
+  },
+  "scripts": {
+
   }
 }
