@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const ts = require('gulp-typescript');
 const babel = require('gulp-babel');
-const merge = require('merge2')
+const merge = require('merge2');
 const sourcemaps = require('gulp-sourcemaps');
 
 const tsProject = ts.createProject('tsconfig.json');
