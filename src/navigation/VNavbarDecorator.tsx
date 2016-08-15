@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-import { Navbar, DefaultNavbar } from './Navbar';
+import { Navbar } from './Navbar';
 
-export function VNavbarDecorator(constructor: any): any {
-    const OriginalType: typeof DefaultNavbar = constructor as typeof DefaultNavbar;
+export function VNavbarDecorator(constructor: Navbar): any {
+    const OriginalType: typeof React.Component = constructor as typeof React.Component;
 
-    class NvbarTrait extends OriginalType {
+    class NavbarTrait extends OriginalType<any, any> {
 
         render(): React.ReactElement<any> {
             return (
@@ -17,19 +17,19 @@ export function VNavbarDecorator(constructor: any): any {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        {this.getBrand()}
+                        {(this as Navbar).getBrand ? (this as Navbar).getBrand() : null}
                     </div>
                     <nav className="collapse navbar-collapse">
                         <ul className="nav navbar-nav">
-                            {this.getLeft()}
+                            {(this as Navbar).getLeft() ? (this as Navbar).getLeft() : null}
                         </ul>
                         <ul className="nav navbar-nav navbar-right navbar-iconic">
-                            {this.getRight()}
+                            {(this as Navbar).getRight() ? (this as Navbar).getRight() : null}
                         </ul>
                     </nav>
                 </nav>)
         }
     }
 
-    return NvbarTrait;
+    return NavbarTrait;
 }
