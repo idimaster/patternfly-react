@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "node-uuid": "^1.4.7",
     "patternfly": "^3.8.1",
     "react": "^15.3.0"
   },
