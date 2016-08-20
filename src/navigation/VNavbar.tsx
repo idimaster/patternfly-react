@@ -20,10 +20,10 @@ export function VNavbar(constructor : typeof React.Component & NavbarStore) : an
                         {(this as NavbarStore).getBrand ? (this as NavbarStore).getBrand() : null}
                     </div>
                     <nav className="collapse navbar-collapse">
-                        <ul className="nav navbar-nav">
+                        <ul key='left' className="nav navbar-nav">
                             {(this as NavbarStore).getLeftPanelElements() ? (this as NavbarStore).getLeftPanelElements() : null}
                         </ul>
-                        <ul className="nav navbar-nav navbar-right navbar-iconic">
+                        <ul key='right' className="nav navbar-nav navbar-right navbar-iconic">
                             {(this as NavbarStore).getRightPanelElements() ? (this as NavbarStore).getRightPanelElements() : null}
                         </ul>
                     </nav>
