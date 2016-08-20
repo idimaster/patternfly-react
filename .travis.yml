@@ -1,0 +1,22 @@
+sudo: false
+
+language: node_js
+node_js:
+  - stable
+
+env:
+  - BROWSER=ChromeCi
+  - BROWSER=Firefox
+
+cache:
+  directories:
+    - node_modules
+
+before_script:
+  - npm install -g gulp
+script: gulp
+
+branches:
+  only:
+    - master
+
