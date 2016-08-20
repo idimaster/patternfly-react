@@ -1,7 +1,3 @@
-/**
- * Created by Dmitry<dizumskiy@eisgroup.com> on 8/14/16.
- */
-
 import * as React from 'react'
 
 export class Brand extends React.Component<any, any> {

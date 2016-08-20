@@ -1,6 +1,5 @@
+export * from './store'
 export * from './Header'
-export * from './Navbar'
-export * from './VNavbarDecorator'
 export * from './VNavbar'
 export * from './Brand'
 export * from './Sidebar'
