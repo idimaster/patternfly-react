@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { SidebarElement } from '../items/SidebarItem'
+
 export interface SidebarStore {
-    getItems?(): React.ReactElement<any>[];
+    getItems?(): SidebarElement[];
 }
