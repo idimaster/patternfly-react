@@ -1,14 +1,11 @@
 import * as React from 'react'
 import * as uuid from 'node-uuid'
 
-import { SidebarElement } from "./SideBarItem";
-
-export class SidebarItemList extends React.Component<{ label: string, icon: string, list: string[] }, any> implements SidebarElement {
+export class SidebarItemList extends React.Component<{ label: string, icon: string }, any> {
     static propTypes() {
         return {
             label: React.PropTypes.string.isRequired,
-            icon: React.PropTypes.string.isRequired,
-            list: React.PropTypes.array.isRequired
+            icon: React.PropTypes.string.isRequired
         }
     }
 
@@ -31,12 +28,7 @@ export class SidebarItemList extends React.Component<{ label: string, icon: stri
                     <span>{this.props.label}</span>
                 </div>
                 <ul className="list-group">
-                    {this.props.list.map((name, index) => {
-                        return <li key={index} className="list-group-item">
-                            <a>
-                                <span className="list-group-item-value">{name}</span>
-                            </a>
-                        </li>})}
+                    {this.props.children}
                 </ul>
             </div>
         </li>
