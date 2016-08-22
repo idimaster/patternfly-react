@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export class VSidebar extends React.Component<any, any> {
+export class Sidebar extends React.Component<any, any> {
 
     render(): React.ReactElement<any> {
         return <div className="nav-pf-vertical nav-pf-vertical-with-sub-menus hide-nav-pf">
