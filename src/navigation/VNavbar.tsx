@@ -1,35 +1,44 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import { NavbarStore } from './store';
+import { Brand } from './Brand'
+import { LeftPanel } from './LeftPanel'
+import { RightPanel } from './RightPanel'
 
-export function VNavbar(constructor : typeof React.Component & NavbarStore) : any {
-    const OriginalType: typeof React.Component = constructor as typeof React.Component;
+export class VNavbar extends React.Component<any, any> {
 
-    class VNavbarTrait extends OriginalType<any, any> {
-
-        render(): React.ReactElement<any> {
-            return (
-                <nav className="navbar navbar-pf-vertical">
-                    <div className="navbar-header">
-                        <button type="button" className="navbar-toggle">
-                            <span className="sr-only">Toggle navigation</span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                        </button>
-                        {(this as NavbarStore).getBrand ? (this as NavbarStore).getBrand() : null}
-                    </div>
-                    <nav className="collapse navbar-collapse">
-                        <ul key='left' className="nav navbar-nav">
-                            {(this as NavbarStore).getLeftPanelElements() ? (this as NavbarStore).getLeftPanelElements() : null}
-                        </ul>
-                        <ul key='right' className="nav navbar-nav navbar-right navbar-iconic">
-                            {(this as NavbarStore).getRightPanelElements() ? (this as NavbarStore).getRightPanelElements() : null}
-                        </ul>
-                    </nav>
-                </nav>)
-        }
+    static get Brand(): typeof Brand {
+        return Brand;
     }
 
-    return VNavbarTrait;
+    static get RightPanel(): typeof RightPanel {
+        return RightPanel;
+    }
+
+    static get LeftPanel(): typeof LeftPanel {
+        return LeftPanel;
+    }
+
+    render(): React.ReactElement<any> {
+        const children = React.Children.toArray(this.props.children);
+        //TODO: find correct children
+        const brand = children[0];
+        const left = children[1];
+        const right = children[2];
+        return (
+            <nav className="navbar navbar-pf-vertical">
+                <div className="navbar-header">
+                    <button type="button" className="navbar-toggle">
+                        <span className="sr-only">Toggle navigation</span>
+                        <span className="icon-bar"></span>
+                        <span className="icon-bar"></span>
+                        <span className="icon-bar"></span>
+                    </button>
+                    {brand}
+                </div>
+                <nav className="collapse navbar-collapse">
+                    {left}
+                    {right}
+                </nav>
+            </nav>)
+    }
 }

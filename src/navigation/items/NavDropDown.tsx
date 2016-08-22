@@ -2,14 +2,12 @@ import * as React from 'react'
 import * as uuid from 'node-uuid'
 
 import { NavItem } from "./NavItem";
-import { StoreCallback } from "../store/DropDownStore";
 
-export class NavDropDown extends NavItem<{ name: string, icon: string, store: StoreCallback }> {
+export class NavDropDown extends NavItem<{ name: string, icon: string }> {
     static propTypes() {
         return {
             name: React.PropTypes.string.isRequired,
             icon: React.PropTypes.string.isRequired,
-            store: React.PropTypes.func.isRequired
         }
     }
 
@@ -26,9 +24,7 @@ export class NavDropDown extends NavItem<{ name: string, icon: string, store: St
                 <span className="caret"></span>
             </a>
             <ul className="dropdown-menu" aria-labelledby={ this.id }>
-                {this.props.store().map((item, index) => {
-                    return <li key={index}><a href="#">{item.name}</a></li>
-                })}
+                {this.props.children}
             </ul>
         </li>
     }
