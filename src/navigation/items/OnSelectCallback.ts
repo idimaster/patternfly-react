@@ -1,5 +1,5 @@
 export interface Payload {
-    payload: any;
+    payload?: any;
 }
 
 export interface CommandPayload extends  Payload{
@@ -7,5 +7,5 @@ export interface CommandPayload extends  Payload{
 }
 
 export interface OnSelectCallback {
-    (event: Payload)
+    (event: CommandPayload)
 }

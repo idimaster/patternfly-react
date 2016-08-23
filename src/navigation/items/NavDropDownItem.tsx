@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import {OnSelectCallback, Payload} from "./OnSelectCallback";
+import {OnSelectCallback, CommandPayload} from "./OnSelectCallback";
 
-export class NavDropDownItem extends React.Component<{label: string, onSelect?: OnSelectCallback, payload?: Payload}, any> {
+export class NavDropDownItem extends React.Component<{label: string, onSelect?: OnSelectCallback, payload?: CommandPayload}, any> {
     static propTypes() {
         return {
             label: React.PropTypes.string.isRequired,
