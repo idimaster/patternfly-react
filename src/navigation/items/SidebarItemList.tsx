@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as uuid from 'node-uuid'
 
-export class SidebarItemList extends React.Component<{ label: string, icon: string }, any> {
+export class SidebarItemList extends React.Component<{ active?: boolean, label: string, icon: string }, any> {
     static propTypes() {
         return {
             label: React.PropTypes.string.isRequired,
@@ -16,7 +16,9 @@ export class SidebarItemList extends React.Component<{ label: string, icon: stri
     }
 
     render(): React.ReactElement<any> {
-        return <li className="list-group-item secondary-nav-item-pf" data-target={'#' + this.id}>
+        var style = 'list-group-item secondary-nav-item-pf';
+        if (this.props.active) style += ' active';
+        return <li className={style} data-target={'#' + this.id}>
             <a>
                 <span className={'fa ' + this.props.icon} data-toggle="tooltip" title={this.props.label}></span>
                 <span className="list-group-item-value">{this.props.label}</span>
