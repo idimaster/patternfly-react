@@ -1,8 +1,16 @@
 import * as React from 'react'
+import invariant from 'invariant';
 
 import { Brand } from './Brand'
 import { LeftPanel } from './LeftPanel'
 import { RightPanel } from './RightPanel'
+import {ReactElement} from "react";
+
+interface PanelsDto {
+    brand?: ReactElement<any>
+    left?: ReactElement<any>
+    right?: ReactElement<any>
+}
 
 export class VNavbar extends React.Component<any, any> {
 
@@ -18,12 +26,36 @@ export class VNavbar extends React.Component<any, any> {
         return LeftPanel;
     }
 
+    private findPanels(children: React.ReactNode): PanelsDto {
+        let brand = null;
+        let left = null;
+        let right = null;
+        React.Children.forEach(children, child => {
+            if(React.isValidElement(child)) {
+                switch (child.type) {
+                    case Brand:
+                        invariant(brand != null, 'Only one Brand element allowed.');
+                        brand = child;
+                        break;
+                    case LeftPanel:
+                        invariant(left != null, 'Only one LeftPanel element allowed.');
+                        left = child;
+                        break;
+                    case RightPanel:
+                        invariant(right != null, 'Only one RightPanel element allowed.');
+                        right = child;
+                        break;
+                    default:
+                        invariant(true, 'Only Brand, LeftPanel and RightPanel elements allowed as child for VNavbar')
+                }
+            }
+        });
+
+        return {brand, left, right}
+    }
+
     render(): React.ReactElement<any> {
-        const children = React.Children.toArray(this.props.children);
-        //TODO: find correct children
-        const brand = children[0];
-        const left = children[1];
-        const right = children[2];
+        const panels = this.findPanels(this.props.children);
         return (
             <nav className="navbar navbar-pf-vertical">
                 <div className="navbar-header">
@@ -33,11 +65,11 @@ export class VNavbar extends React.Component<any, any> {
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
                     </button>
-                    {brand}
+                    {panels.brand}
                 </div>
                 <nav className="collapse navbar-collapse">
-                    {left}
-                    {right}
+                    {panels.left}
+                    {panels.right}
                 </nav>
             </nav>)
     }
