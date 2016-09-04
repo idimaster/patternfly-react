@@ -2,7 +2,13 @@ import * as React from 'react'
 
 import {OnActionCallback, ActionPayload} from "../../events";
 
-export class ListActionItem extends React.Component<{label: string, onAction?: OnActionCallback, payload?: ActionPayload}, any> {
+export interface ListActionItemProps {
+    label: string
+    onAction?: OnActionCallback
+    payload?: ActionPayload
+}
+
+export class ListActionItem extends React.Component<ListActionItemProps, any> {
     static propTypes() {
         return {
             label: React.PropTypes.string.isRequired,

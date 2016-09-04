@@ -27,7 +27,7 @@ namespace React {
     }
 
     interface ReactElement<P> {
-        type: string | ComponentClass<P> | SFC<P>;
+        type: string | ComponentClass<P> | SFC<P> | any;
         props: P;
         key?: Key;
     }
