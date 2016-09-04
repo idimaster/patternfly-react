@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {OnSelectCallback, CommandPayload} from "./OnSelectCallback";
+import {OnSelectCallback, CommandPayload} from "../../events";
 
 export class SidebarListItem extends React.Component<{label: string, onSelect?: OnSelectCallback, payload?: CommandPayload }, any> {
     static propTypes() {

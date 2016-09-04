@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import {NavItem} from "./NavItem";
-import {OnClearCallback} from "./OnClearCallback";
+import {OnClearCallback} from "../../events";
 
 export class NavInfoList extends NavItem<{ id: string, label: string, onClear?: OnClearCallback }> {
     static propTypes() {

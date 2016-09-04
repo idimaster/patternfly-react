@@ -1,12 +1,15 @@
 import * as React from 'react'
-import {CommandPayload, OnSelectCallback} from "./OnSelectCallback";
+import {CommandPayload, OnSelectCallback} from "../../events";
 
 export class SidebarItem extends React.Component<{ active?: boolean, label: string, icon: string, onSelect?: OnSelectCallback, payload?: CommandPayload}, any> {
     static propTypes() {
         return {
             label: React.PropTypes.string.isRequired,
             icon: React.PropTypes.string.isRequired,
-            route: React.PropTypes.string.isRequired
+            route: React.PropTypes.string.isRequired,
+            onSelect: React.PropTypes.func,
+            payload: React.PropTypes.object,
+            active: React.PropTypes.bool
         }
     }
 
