@@ -1,5 +1,5 @@
 import * as React from 'react'
-import invariant from 'invariant';
+const invariant = require('invariant');
 
 import { Brand } from './Brand'
 import { LeftPanel } from './LeftPanel'
@@ -34,19 +34,19 @@ export class VNavbar extends React.Component<any, any> {
             if(React.isValidElement(child)) {
                 switch (child.type) {
                     case Brand:
-                        invariant(brand != null, 'Only one Brand element allowed.');
+                        invariant(brand == null, 'Only one Brand element allowed.');
                         brand = child;
                         break;
                     case LeftPanel:
-                        invariant(left != null, 'Only one LeftPanel element allowed.');
+                        invariant(left == null, 'Only one LeftPanel element allowed.');
                         left = child;
                         break;
                     case RightPanel:
-                        invariant(right != null, 'Only one RightPanel element allowed.');
+                        invariant(right == null, 'Only one RightPanel element allowed.');
                         right = child;
                         break;
                     default:
-                        invariant(true, 'Only Brand, LeftPanel and RightPanel elements allowed as child for VNavbar')
+                        invariant(false, 'Only Brand, LeftPanel and RightPanel elements allowed as child for VNavbar')
                 }
             }
         });
