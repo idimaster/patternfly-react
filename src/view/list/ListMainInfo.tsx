@@ -3,10 +3,12 @@ const invariant = require('invariant');
 
 import {ListMainInfoLeft} from "./ListMainInfoLeft";
 import {ListMainInfoDescription} from "./ListMainInfoDescription";
+import {ListAdditionalInfo} from "./ListAdditionalInfo";
 
 interface ItemsDto {
     left?: React.ReactElement<any>
     description?: React.ReactElement<any>
+    additional: React.ReactElement<any>[]
 }
 
 export class ListMainInfo extends React.Component<any, any> {
@@ -18,10 +20,16 @@ export class ListMainInfo extends React.Component<any, any> {
         return ListMainInfoDescription;
     }
 
+    static get Additional(): typeof ListAdditionalInfo {
+        return ListAdditionalInfo;
+    }
+
     private findItems(children: React.ReactNode): ItemsDto {
         let left = null;
         let description = null;
-        React.Children.forEach(children, child => {
+        let additional = [];
+        const allChildren = React.Children.toArray(children);
+        allChildren.forEach(child => {
             if(React.isValidElement(child)) {
                 switch (child.type) {
                     case ListMainInfoLeft:
@@ -32,12 +40,15 @@ export class ListMainInfo extends React.Component<any, any> {
                         invariant(description == null, 'Only one Description element allowed.');
                         description = child;
                         break;
+                    case ListAdditionalInfo:
+                        additional.push(child);
+                        break;
                     default:
-                        invariant(false, 'Only Brand, LeftPanel and RightPanel elements allowed as child for ListMainInfo')
+                        invariant(false, 'Only Left, Description and Additional elements allowed as child for ListMainInfo')
                 }
             }
         });
-        return {left, description}
+        return {left, description, additional}
     }
 
     render(): React.ReactElement<any> {
@@ -47,22 +58,7 @@ export class ListMainInfo extends React.Component<any, any> {
             <div className="list-view-pf-body">
                 {items.description}
                 <div className="list-view-pf-additional-info">
-                    <div className="list-view-pf-additional-info-item">
-                        <span className="pficon pficon-screen"></span>
-                        <strong>8</strong> Hosts
-                    </div>
-                    <div className="list-view-pf-additional-info-item">
-                        <span className="pficon pficon-cluster"></span>
-                        <strong>8</strong> Clusters
-                    </div>
-                    <div className="list-view-pf-additional-info-item">
-                        <span className="pficon pficon-container-node"></span>
-                        <strong>18</strong> Nodes
-                    </div>
-                    <div className="list-view-pf-additional-info-item">
-                        <span className="pficon pficon-image"></span>
-                        <strong>4</strong> Images
-                    </div>
+                    {items.additional}
                 </div>
             </div>
         </div>
