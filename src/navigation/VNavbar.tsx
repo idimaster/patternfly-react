@@ -4,12 +4,11 @@ const invariant = require('invariant');
 import { Brand } from './Brand'
 import { LeftPanel } from './LeftPanel'
 import { RightPanel } from './RightPanel'
-import {ReactElement} from "react";
 
 interface PanelsDto {
-    brand?: ReactElement<any>
-    left?: ReactElement<any>
-    right?: ReactElement<any>
+    brand?: React.ReactElement<any>
+    left?: React.ReactElement<any>
+    right?: React.ReactElement<any>
 }
 
 export class VNavbar extends React.Component<any, any> {
