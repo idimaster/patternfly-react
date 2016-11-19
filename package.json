@@ -1,6 +1,6 @@
 {
   "name": "patternfly-react",
-  "version": "0.0.9",
+  "version": "0.1.1",
   "description": "Lightweight react components for patternfly",
   "main": "dist/js/index.js",
   "typings": "dist/definitions/index.d.ts",
