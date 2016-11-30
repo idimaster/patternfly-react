@@ -4,6 +4,7 @@ const invariant = require('invariant');
 import {ListMainInfoLeft} from "./ListMainInfoLeft";
 import {ListMainInfoDescription} from "./ListMainInfoDescription";
 import {ListAdditionalInfo} from "./ListAdditionalInfo";
+import {ListAdditionalInfoStacked} from "./ListAdditionalInfoStacked";
 
 interface ItemsDto {
     left?: React.ReactElement<any>
@@ -24,6 +25,10 @@ export class ListMainInfo extends React.Component<any, any> {
         return ListAdditionalInfo;
     }
 
+    static get AdditionalStacked(): typeof ListAdditionalInfoStacked {
+        return ListAdditionalInfoStacked;
+    }
+
     private findItems(children: React.ReactNode): ItemsDto {
         let left = null;
         let description = null;
@@ -41,6 +46,9 @@ export class ListMainInfo extends React.Component<any, any> {
                         description = child;
                         break;
                     case ListAdditionalInfo:
+                        additional.push(child);
+                        break;
+                    case ListAdditionalInfoStacked:
                         additional.push(child);
                         break;
                     default:
