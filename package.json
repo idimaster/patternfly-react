@@ -42,7 +42,7 @@
     "bootstrap": "^3.3.7",
     "invariant": "^2.2.1",
     "node-uuid": "^1.4.7",
-    "patternfly": "^3.8.1",
+    "patternfly": "3.15.0",
     "react": "^15.3.0"
   },
   "engines": {
