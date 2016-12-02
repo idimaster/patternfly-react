@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-export class CardBody extends React.Component<any, any> {
+export class CardItems extends React.Component<any, any> {
     render(): React.ReactElement<any> {
-        return <div className="card-pf-body">
+        return <div className="card-pf-items text-center">
             {this.props.children}
         </div>
     }
