@@ -1,5 +1,5 @@
 # Vertical navigation
-[http://www.patternfly.org/pattern-library/navigation/vertical-navigation]
+![http://www.patternfly.org/pattern-library/navigation/vertical-navigation]
 
 ## Top navigation bar
 
