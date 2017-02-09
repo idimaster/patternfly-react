@@ -1,16 +1,36 @@
 # Vertical navigation
-[http://www.patternfly.org/pattern-library/navigation/vertical-navigation](http://www.patternfly.org/pattern-library/navigation/vertical-navigation)
+[vertical-navigation](http://www.patternfly.org/pattern-library/navigation/vertical-navigation)
 
 ## Top navigation bar
 Use `<VNavbar>` as root comonent for vertical naviatin bar. It allows three chaild components: `<VNavbar.Brand>`, `<VNavbar.LeftPanel>` and `<VNavbar.RightPanel>`
 
+`<VNavbar.Brand>` brand definition, any component as a child.
+`<VNavbar.LeftPanel>` determines panel with left aligment, allows `<NavItem>`, `<NavInfoLis>` and `<NavDropDown>` as a child.
+`<VNavbar.RightPanel>` determines element with right aligment, allows `<NavItem>`, `<NavInfoLis>` and `<NavDropDown>` as a child.
+
+`<NavItem>` deterimes item for 'left' or 'right' naviation panels, allows any compnent as a child.
+
+`<NavInfoLis>` represents Notification Drawer 
+[notification-drawer](http://www.patternfly.org/pattern-library/communication/notification-drawer/#/api)
 
 ### Props
 
 Name|Type|Default|Description
 ---|---|---|---
-test|v|v||
+id|string|||
+label|string|||
+onClear|function||OnClearCallback, function gets drawer id as parameter|
 
+```typescript
+export interface OnClearCallback {
+    (id: string)
+}
+```
+
+`<NavDropDown>`
+
+
+### Example of usage
 ```javascript
 <VNavbar>
     <VNavbar.Brand>
