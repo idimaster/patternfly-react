@@ -2,8 +2,16 @@
 [http://www.patternfly.org/pattern-library/navigation/vertical-navigation](http://www.patternfly.org/pattern-library/navigation/vertical-navigation)
 
 ## Top navigation bar
+Use `<VNavbar>` as root comonent for vertical naviatin bar. It allows three chaild components: `<VNavbar.Brand>`, `<VNavbar.LeftPanel>` and `<VNavbar.RightPanel>`
 
-```jsx
+
+### Props
+
+Name|Type|Default|Description
+---|---|---
+test|v|v
+
+```javascript
 <VNavbar>
     <VNavbar.Brand>
         <img className="navbar-brand-icon" src="http://www.patternfly.org/assets/img/logo-alt.svg" alt=""/><img
@@ -21,11 +29,6 @@
             <NavInfoItem label='Test Message' />
             <NavInfoItem label='Error: System Failure' />
         </NavInfoList>
-        <NavInfoList id='id2' label='Notification' onClear={this.handleClear}>
-            <NavInfoItem label='Modified Datasouxccc vxvc dgfgg fg  fff ff f  dfggfhdh rces ExampleDS' />
-            <NavInfoItem label='Test Message' />
-            <NavInfoItem label='Error: System Failure' />
-        </NavInfoList>
         <NavDropDown name='Help' icon='pficon-help'>
             <NavDropDownItem label='Help' onSelect={this.handleTopMenu} payload={{command: 'help'}}/>
             <NavDropDownItem label='About' onSelect={this.handleTopMenu} payload={{command: 'about'}}/>
@@ -40,7 +43,7 @@
 
 ## Left side menu
 
-```jsx
+```javascript
 <Sidebar>
     <SidebarItem active={this.state.active == 'dashboard'} icon='fa-dashboard' label='Dashboard' onSelect={this.handleSideMenu} payload={{command: 'dashboard'}}/>
     <SidebarItem active={this.state.active == 'dolor'} icon='fa-shield' label='Dolor' onSelect={this.handleSideMenu} payload={{command: 'dolor'}}/>
