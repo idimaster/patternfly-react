@@ -1,10 +1,5 @@
----
-id: tutorial
-title: "Tutorial: Intro To Patternfly React"
----
-
 # Vertical navigation
-http://www.patternfly.org/pattern-library/navigation/vertical-navigation
+[http://www.patternfly.org/pattern-library/navigation/vertical-navigation]
 
 ## Top navigation bar
 
@@ -42,6 +37,7 @@ http://www.patternfly.org/pattern-library/navigation/vertical-navigation
     </VNavbar.RightPanel>
 </VNavbar>
 ```
+
 ## Left side menu
 
 ```javascript
