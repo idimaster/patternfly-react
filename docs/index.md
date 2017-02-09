@@ -92,6 +92,7 @@ export interface OnSelectCallback {
 
 ### Complex example of usage
 ```javascript
+{% raw %}
 <VNavbar>
     <VNavbar.Brand>
         <img className="navbar-brand-icon" src="http://www.patternfly.org/assets/img/logo-alt.svg" alt=""/><img
@@ -119,6 +120,7 @@ export interface OnSelectCallback {
         </NavDropDown>
     </VNavbar.RightPanel>
 </VNavbar>
+{% endraw %}
 ```
 
 ## Left side menu
