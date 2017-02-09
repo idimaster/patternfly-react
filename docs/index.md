@@ -85,8 +85,8 @@ export interface OnSelectCallback {
 
 ```javascript
 <NavDropDown name='User' icon='pficon-user'>
-   <NavDropDownItem label='Preferences' onSelect={this.handleTopMenu} payload={{command: 'preferences'}}/>
-   <NavDropDownItem label='Logout' onSelect={this.handleTopMenu} payload={{command: 'logout'}}/>
+   <NavDropDownItem label='Preferences' onSelect={this.handleTopMenu} payload=\{\{command: 'preferences'\}\}/>
+   <NavDropDownItem label='Logout' onSelect={this.handleTopMenu} payload=\{\{command: 'logout'\}\}/>
 </NavDropDown>
 ```
 
