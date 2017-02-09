@@ -3,7 +3,7 @@
 
 ## Top navigation bar
 
-```javascript
+```jsx
 <VNavbar>
     <VNavbar.Brand>
         <img className="navbar-brand-icon" src="http://www.patternfly.org/assets/img/logo-alt.svg" alt=""/><img
