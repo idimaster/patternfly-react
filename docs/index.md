@@ -10,16 +10,18 @@ Use `<VNavbar>` as root comonent for vertical naviatin bar. It allows three chai
 
 `<NavItem>` deterimes item for 'left' or 'right' naviation panels, allows any compnent as a child.
 
-`<NavInfoLis>` represents Notification Drawer 
+`<NavInfoLis>` represents Notification Drawer, allows `<NavInfoItem>` as a child.
 [notification-drawer](http://www.patternfly.org/pattern-library/communication/notification-drawer/#/api)
 
 ### Props
 
 Name|Type|Default|Description
 ---|---|---|---
-id|string|||
-label|string|||
+id|string||Drawer id, required|
+label|string||Drawer label|
 onClear|function||OnClearCallback, function gets drawer id as parameter|
+
+### Callback typescript contract
 
 ```typescript
 export interface OnClearCallback {
@@ -27,10 +29,68 @@ export interface OnClearCallback {
 }
 ```
 
-`<NavDropDown>`
+`<NavInfoItem>` defines notification item for Notification Drawer
+### Props
 
+Name|Type|Default|Description
+---|---|---|---
+label|string||Item label|
 
 ### Example of usage
+
+```javascript
+<NavInfoList id='id1' label='Notification' onClear={this.handleClear}>
+   <NavInfoItem label='Modified Datasources ExampleDS' />
+   <NavInfoItem label='Test Message' />
+   <NavInfoItem label='Error: System Failure' />
+</NavInfoList>
+```
+
+`<NavDropDown>` defines bootstrapp dropdown in application to navigation menu. Allows `<NavDropDownItem>` as a child.
+
+### Props
+
+Name|Type|Default|Description
+---|---|---|---
+name|string||name of dropdown control|
+icon|string||fa or patternfly icon name|
+
+`<NavDropDownItem>` defines dropdown item
+
+### Props
+
+Name|Type|Default|Description
+---|---|---|---
+label|string||item label|
+onSelect|function||OnSelectCallback, onSelect function|
+payload|object||CommandPayload, payload passed as parameter for onSelect function|
+
+### Callback typescript contract
+
+```typescript
+export interface Payload {
+    payload?: any;
+}
+
+export interface CommandPayload extends  Payload {
+    command: string;
+}
+
+export interface OnSelectCallback {
+    (event: CommandPayload)
+}
+```
+
+### Example of usage
+
+```javascript
+<NavDropDown name='User' icon='pficon-user'>
+   <NavDropDownItem label='Preferences' onSelect={this.handleTopMenu} payload={{command: 'preferences'}}/>
+   <NavDropDownItem label='Logout' onSelect={this.handleTopMenu} payload={{command: 'logout'}}/>
+</NavDropDown>
+```
+
+### Complex example of usage
 ```javascript
 <VNavbar>
     <VNavbar.Brand>
