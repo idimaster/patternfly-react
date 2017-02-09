@@ -84,10 +84,12 @@ export interface OnSelectCallback {
 ### Example of usage
 
 ```javascript
+{% raw %}
 <NavDropDown name='User' icon='pficon-user'>
-   <NavDropDownItem label='Preferences' onSelect={this.handleTopMenu} payload={ {command: 'preferences'} }/>
-   <NavDropDownItem label='Logout' onSelect={this.handleTopMenu} payload={ {command: 'logout'} }/>
+   <NavDropDownItem label='Preferences' onSelect={this.handleTopMenu} payload={{command: 'preferences'}}/>
+   <NavDropDownItem label='Logout' onSelect={this.handleTopMenu} payload={{command: 'logout'}}/>
 </NavDropDown>
+{% endraw %}
 ```
 
 ### Complex example of usage
@@ -126,6 +128,7 @@ export interface OnSelectCallback {
 ## Left side menu
 
 ```javascript
+{% raw %}
 <Sidebar>
     <SidebarItem active={this.state.active == 'dashboard'} icon='fa-dashboard' label='Dashboard' onSelect={this.handleSideMenu} payload={{command: 'dashboard'}}/>
     <SidebarItem active={this.state.active == 'dolor'} icon='fa-shield' label='Dolor' onSelect={this.handleSideMenu} payload={{command: 'dolor'}}/>
@@ -148,4 +151,5 @@ export interface OnSelectCallback {
     <SidebarItem active={this.state.active == 'adipscing'} icon='fa-graduation-cap' label='Adipscing' onSelect={this.handleSideMenu} payload={{command: 'adipscing'}}/>
     <SidebarItem active={this.state.active == 'lorem'} icon='fa-gamepad' label='Lorem' onSelect={this.handleSideMenu} payload={{command: 'lorem'}}/>
 </Sidebar>
+{% endraw %}
 ```
