@@ -8,8 +8,8 @@ Use `<VNavbar>` as root comonent for vertical naviatin bar. It allows three chai
 ### Props
 
 Name|Type|Default|Description
----|---|---
-test|v|v
+---|---|---|---
+test|v|v||
 
 ```javascript
 <VNavbar>
