@@ -20,7 +20,7 @@ export class StepTitle extends React.Component<{active?: boolean, number?: strin
     }
     
     render(): React.ReactElement<any> {
-        var style = "list-group-item";
+        let style = "list-group-item";
         if (this.props.active) style += ' active';
         return <li className={style}>
             <a onClick={this.handleSelect}>
