@@ -1,7 +1,7 @@
 {
-  "name": "patternfly-react",
-  "version": "0.1.5",
-  "description": "Lightweight react components for patternfly",
+  "name": "patternfly-react-ts",
+  "version": "1.0.1",
+  "description": "Lightweight react components for patternfly, Type Script implementation",
   "main": "dist/js/index.js",
   "typings": "dist/definitions/index.d.ts",
   "files": [
@@ -42,7 +42,7 @@
     "bootstrap": "^3.3.7",
     "invariant": "^2.2.1",
     "node-uuid": "^1.4.7",
-    "patternfly": "3.15.0",
+    "patternfly": "3.23.1",
     "react": "^15.3.0"
   },
   "engines": {
