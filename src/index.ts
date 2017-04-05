@@ -1,5 +1,6 @@
 export * from './events'
 export * from './navigation'
+export * from './notifications'
 export * from './view/list'
 export * from './view/cards'
 export * from './wizard'
